@@ -17,8 +17,8 @@ GET
 ```
 ### Parametre JSON dát
 
-| Kľúč		     	| Povinný	| Dĺžka	| Typ		| Predvolené| Akceptované hodnoty | Popis | 
-| ----------------	| ---------	| -----	| -----		| ---------	|---------------------|------------	|	
+| Kľúč		     	| Povinný	| Dĺžka	| Typ		| Predvolené| Akceptovaná hodnota | Popis 									| 
+| ----------------	| ---------	| -----	| -----		| ---------	|---------------------|----------------------------------------	|	
 | **keyword**		| áno 		| 		| string	|			| 					  | Požiadavka na základe typu EČV/VIN
 | **keyword2**		| nie 		| 		| string	|			| 					  | Upresňujúca požiadavka, napr. pri parametri keyword s hodnotou EČV možno pomocou parametru keyword2 upresniť VIN, kedy vráti striktný výsledok konkrétnej kombinácie.
 | **type**			| áno 		| 		| string	|			| license_plate, vin  | Typ požiadavky, ktorou sa upresní aký typ dát je očakávaný v parametri keyword.

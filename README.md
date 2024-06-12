@@ -6,11 +6,11 @@ Ak máte záujem o API prístup (kľúč), [kontaktujte nás](https://overenie.d
 verejne a pod.). Viac informácií nájdete na [portáli overenie.digital](https://overenie.digital/api).
 
 
-## List of functions
+## Zoznam funkcií
 
 Podrobný popis každej funkcie sa nachádza v priečinkoch tohto repozitára.
 
-| Name		     		| Type		| Description	| 
+| Názov funkcie    		| Metóda	| Popis			| 
 | ----------------		| ---------	| -------------	|
 | **vehicle**			| GET 		| Získa základné údaje o vozidle podľa EČV alebo VIN |
 
@@ -172,8 +172,8 @@ curl -X GET \
 
 ---
 
-## Optional parameters available in all API functions
+## Nepovinné parametre v JSON dátach dostupné v každej funkcii
 
-| Name		     	| Length	| Type		| Default	| Valid values	| Description 	|
-| ----------------	| --------	| -----		| ---------	|--------------	| -------------	|
-| **json_format**	| 			| string	| min		| min, pretty	| Format of JSON result |
+| Kľúč		     	| Povinný	| Dĺžka	| Typ		| Predvolené| Akceptovaná hodnota | Popis 									| 
+| ----------------	| ---------	| -----	| -----		| ---------	|---------------------|----------------------------------------	|
+| **json_format**	| nie			| string	| min	| min, pretty	| Formát JSON výsledku. |
