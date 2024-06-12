@@ -145,7 +145,7 @@ curl -X GET \
      -H "Accept: application/json" \
      -H "Version: 1.0" \
      -H "Authorization: Bearer VAS_API_KLUC" \
-     -d '{"AA001AA":"MA834AE","keyword":"VF3GC9HWC96169767", "type":"license_plate"}' \
+     -d '{"keyword":"AA001AA","keyword":"VF3GC9HWC96169767", "type":"license_plate"}' \
      "https://overenie.digital/api/vehicle"
 ```
 
