@@ -48,11 +48,6 @@ curl -X GET \
 {
     "result": [
         {
-            "query": {
-                "keyword": "AA001AA",
-                "keyword2": "",
-                "type": "license_plate"
-            },
             "vehicle": {
                 "license_plate": "AA001AA",
                 "vin": "JF1SG5LW47G123964",
@@ -70,7 +65,7 @@ curl -X GET \
                 "date_of_production": null,
                 "year_of_production": "2007",
                 "body_type": null,
-                "body_type_text": "VAN",
+                "body_type_text": null,
                 "category": null,
                 "category_text": null,
                 "weight": "1880",
@@ -91,17 +86,21 @@ curl -X GET \
             "vehicles_with_license_plate": [
                 {
                     "vin": "JF1SG5LW47G123964",
-                    "manufacturer": "SUBARU",
+                    "brand": "SUBARU",
                     "model": "FORESTER",
-                    "vehicle_type": "1",
-                    "vehicle_type_text": "osobn\u00e9 vozidlo"
+                    "body_type": null,
+                    "body_type_text": null,
+                    "category": null,
+                    "category_text": "osobn\u00e9 vozidlo"
                 },
                 {
                     "vin": "VF3GC9HWC96169767",
-                    "manufacturer": "PEUGEOT",
+                    "brand": "PEUGEOT",
                     "model": "PARTNER",
-                    "vehicle_type": "1",
-                    "vehicle_type_text": "osobn\u00e9 vozidlo"
+                    "body_type": null,
+                    "body_type_text": null,
+                    "category": null,
+                    "category_text": "osobn\u00e9 vozidlo"
                 }
             ],
             "overenie_db_vehicle_time_added": "1558361011",
@@ -110,11 +109,6 @@ curl -X GET \
             "overenie_db_license_plate_time_updated": "1708355795"
         },
         {
-            "query": {
-                "keyword": "AA001AA",
-                "keyword2": "",
-                "type": "license_plate"
-            },
             "vehicle": {
                 "license_plate": "AA001AA",
                 "vin": "VF3GC9HWC96169767",
@@ -132,7 +126,7 @@ curl -X GET \
                 "date_of_production": null,
                 "year_of_production": "2005",
                 "body_type": null,
-                "body_type_text": "VAN",
+                "body_type_text": null,
                 "category": null,
                 "category_text": null,
                 "weight": "1930",
@@ -156,17 +150,21 @@ curl -X GET \
             "vehicles_with_license_plate": [
                 {
                     "vin": "JF1SG5LW47G123964",
-                    "manufacturer": "SUBARU",
+                    "brand": "SUBARU",
                     "model": "FORESTER",
-                    "vehicle_type": "1",
-                    "vehicle_type_text": "osobn\u00e9 vozidlo"
+                    "body_type": null,
+                    "body_type_text": null,
+                    "category": null,
+                    "category_text": "osobn\u00e9 vozidlo"
                 },
                 {
                     "vin": "VF3GC9HWC96169767",
-                    "manufacturer": "PEUGEOT",
+                    "brand": "PEUGEOT",
                     "model": "PARTNER",
-                    "vehicle_type": "1",
-                    "vehicle_type_text": "osobn\u00e9 vozidlo"
+                    "body_type": null,
+                    "body_type_text": null,
+                    "category": null,
+                    "category_text": "osobn\u00e9 vozidlo"
                 }
             ],
             "overenie_db_vehicle_time_added": "1608284708",
@@ -178,13 +176,13 @@ curl -X GET \
     "success": true,
     "errors": [],
     "messages": [],
-    "time": 1718524651,
+    "time": 1718629387,
     "query": {
         "keyword": "AA001AA",
         "keyword2": "",
         "type": "license_plate"
     },
-    "response_time": 2.739990234375
+    "response_time": 2.81005859375
 }
 ```
 
@@ -207,11 +205,6 @@ curl -X GET \
 {
     "result": [
         {
-            "query": {
-                "keyword": "AA001AA",
-                "keyword2": "VF3GC9HWC96169767",
-                "type": "license_plate"
-            },
             "vehicle": {
                 "license_plate": "AA001AA",
                 "vin": "VF3GC9HWC96169767",
@@ -229,7 +222,7 @@ curl -X GET \
                 "date_of_production": null,
                 "year_of_production": "2005",
                 "body_type": null,
-                "body_type_text": "VAN",
+                "body_type_text": null,
                 "category": null,
                 "category_text": null,
                 "weight": "1930",
@@ -253,17 +246,21 @@ curl -X GET \
             "vehicles_with_license_plate": [
                 {
                     "vin": "JF1SG5LW47G123964",
-                    "manufacturer": "SUBARU",
+                    "brand": "SUBARU",
                     "model": "FORESTER",
-                    "vehicle_type": "1",
-                    "vehicle_type_text": "osobn\u00e9 vozidlo"
+                    "body_type": null,
+                    "body_type_text": null,
+                    "category": null,
+                    "category_text": "osobn\u00e9 vozidlo"
                 },
                 {
                     "vin": "VF3GC9HWC96169767",
-                    "manufacturer": "PEUGEOT",
+                    "brand": "PEUGEOT",
                     "model": "PARTNER",
-                    "vehicle_type": "1",
-                    "vehicle_type_text": "osobn\u00e9 vozidlo"
+                    "body_type": null,
+                    "body_type_text": null,
+                    "category": null,
+                    "category_text": "osobn\u00e9 vozidlo"
                 }
             ],
             "overenie_db_vehicle_time_added": "1608284708",
@@ -275,13 +272,13 @@ curl -X GET \
     "success": true,
     "errors": [],
     "messages": [],
-    "time": 1718524671,
+    "time": 1718631330,
     "query": {
         "keyword": "AA001AA",
         "keyword2": "VF3GC9HWC96169767",
         "type": "license_plate"
     },
-    "response_time": 4.93994140625
+    "response_time": 0.960205078125
 }
 ```
 
@@ -325,7 +322,7 @@ curl -X GET \
                 "date_of_production": null,
                 "year_of_production": "2011",
                 "body_type": null,
-                "body_type_text": "AD kup\u00e9",
+                "body_type_text": null,
                 "category": null,
                 "category_text": "M1 - osobn\u00e9 vozidlo, max. 8 miest na sedenie okrem miesta pre vodi\u010da",
                 "weight": "1785",
@@ -345,17 +342,21 @@ curl -X GET \
             "vehicles_with_license_plate": [
                 {
                     "vin": "WF0YXXTTGYJA78718",
-                    "manufacturer": "FORD",
+                    "brand": "FORD",
                     "model": "Transit Custom",
-                    "vehicle_type": "1",
-                    "vehicle_type_text": "osobn\u00e9 vozidlo"
+                    "body_type": null,
+                    "body_type_text": null,
+                    "category": null,
+                    "category_text": "N1 - n\u00e1kladn\u00e9 do 3 500 kg najv\u00e4\u010d\u0161ej pr\u00edpustnej hmotnosti"
                 },
                 {
                     "vin": "ZFF67NHB000181621",
-                    "manufacturer": "FERRARI",
-                    "model": null,
-                    "vehicle_type": "1",
-                    "vehicle_type_text": "osobn\u00e9 vozidlo"
+                    "brand": "FERRARI",
+                    "model": "458",
+                    "body_type": null,
+                    "body_type_text": null,
+                    "category": null,
+                    "category_text": "M1 - osobn\u00e9 vozidlo, max. 8 miest na sedenie okrem miesta pre vodi\u010da"
                 }
             ],
             "overenie_db_vehicle_time_added": "1681997718",
@@ -367,13 +368,13 @@ curl -X GET \
     "success": true,
     "errors": [],
     "messages": [],
-    "time": 1718524076,
+    "time": 1718630377,
     "query": {
         "keyword": "ZFF67NHB000181621",
         "keyword2": "",
         "type": "vin"
     },
-    "response_time": 0.639892578125
+    "response_time": 4.75
 }
 ```
 
