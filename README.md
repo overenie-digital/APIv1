@@ -26,7 +26,7 @@ Požiadavka sa skladá z metódy, headerov, dát a URL adresy.
 | **Version**			| áno 		| 1.0				  | Verzia API. |
 | **Authorization**		| áno 		| Bearer VAS_API_KLUC | Miesto pre váš API kľúč. |
 
-Požiadavku odosielajte požadovanou metódou (GET/POST/PUT/...) zapísanou pri každej API funkcii a dátami vo formáte JSON.
+Požiadavku odosielajte požadovanou metódou (GET/POST/PUT/...) zapísanou pri každej API funkcii a parametrami v dátach, vo formáte JSON.
 
 
 ```
@@ -57,77 +57,143 @@ curl -X GET \
 {
     "result": [
         {
-            "license_plate": "MA834AE",
-            "vin": "449364",
-            "date_of_first_evidence_local": "1640041200",
-            "manufacturer": "BABETTA",
-            "model": "BABETTA 210",
-            "engine_volume_ccm": "49",
-            "power_kw": "1",
-            "fuel": "1",
-            "fuel_text": "benz\u00edn",
-            "number_of_doors": null,
-            "number_of_seats": "1",
-            "year_of_production": null,
-            "body_type": "MOPED",
-            "vehicle_type": "10",
-            "vehicle_type_text": "moped",
-            "weight": "145",
-            "color": "\u010cerven\u00e1",
-            "license_plate_history": [],
+            "query": {
+                "keyword": "AA001AA",
+                "keyword2": "",
+                "type": "license_plate"
+            },
+            "vehicle": {
+                "license_plate": "AA001AA",
+                "vin": "JF1SG5LW47G123964",
+                "brand": "SUBARU",
+                "model": "FORESTER",
+                "first_evidence": null,
+                "first_evidence_local": "1184104800",
+                "engine_volume_ccm": "1994",
+                "power_kw": "116",
+                "color": "\u0160ed\u00c1 metal\u00cdza",
+                "fuel": "8",
+                "fuel_text": "benz\u00edn + LPG",
+                "number_of_doors": null,
+                "number_of_seats": "4",
+                "date_of_production": null,
+                "year_of_production": "2007",
+                "body_type": null,
+                "body_type_text": "VAN",
+                "category": null,
+                "category_text": null,
+                "weight": "1880",
+                "weight_max": null,
+                "gearbox": null,
+                "gearbox_text": null,
+                "gearbox_gears": null,
+                "rims": null,
+                "tires": null
+            },
+            "license_plates_used": [
+                "BL335JP",
+                "PN704BM",
+                "PU758AT",
+                "PK77777",
+                "AA001AA"
+            ],
             "vehicles_with_license_plate": [
                 {
-                    "vin": "TMBZZZ1U9W2118371",
-                    "manufacturer": "\u0160KODA",
-                    "model": "Octavia",
-                    "vehicle_type": false,
-                    "vehicle_type_text": false
+                    "vin": "JF1SG5LW47G123964",
+                    "manufacturer": "SUBARU",
+                    "model": "FORESTER",
+                    "vehicle_type": "1",
+                    "vehicle_type_text": "osobn\u00e9 vozidlo"
+                },
+                {
+                    "vin": "VF3GC9HWC96169767",
+                    "manufacturer": "PEUGEOT",
+                    "model": "PARTNER",
+                    "vehicle_type": "1",
+                    "vehicle_type_text": "osobn\u00e9 vozidlo"
                 }
             ],
-            "overenie_db_vehicle_time_added": "1669815677",
-            "overenie_db_vehicle_time_updated": "1672770168",
-            "overenie_db_license_plate_time_added": "1669815677",
-            "overenie_db_license_plate_time_updated": "1672770168"
+            "overenie_db_vehicle_time_added": "1558361011",
+            "overenie_db_vehicle_time_updated": "1708355795",
+            "overenie_db_license_plate_time_added": "1678434190",
+            "overenie_db_license_plate_time_updated": "1708355795"
         },
         {
-            "license_plate": "MA834AE",
-            "vin": "TMBZZZ1U9W2118371",
-            "date_of_first_evidence_local": "883609200",
-            "manufacturer": "\u0160KODA",
-            "model": "Octavia",
-            "engine_volume_ccm": "1598",
-            "power_kw": "55",
-            "fuel": "1",
-            "fuel_text": "benz\u00edn",
-            "number_of_doors": null,
-            "number_of_seats": "5",
-            "year_of_production": null,
-            "body_type": null,
-            "vehicle_type": null,
-            "vehicle_type_text": null,
-            "weight": "1670",
-            "color": "zelen\u00c1 metal\u00cdza",
-            "license_plate_history": [],
+            "query": {
+                "keyword": "AA001AA",
+                "keyword2": "",
+                "type": "license_plate"
+            },
+            "vehicle": {
+                "license_plate": "AA001AA",
+                "vin": "VF3GC9HWC96169767",
+                "brand": "PEUGEOT",
+                "model": "PARTNER",
+                "first_evidence": null,
+                "first_evidence_local": "1134082800",
+                "engine_volume_ccm": "1560",
+                "power_kw": "55",
+                "color": "biela",
+                "fuel": "2",
+                "fuel_text": "nafta",
+                "number_of_doors": "3",
+                "number_of_seats": "2",
+                "date_of_production": null,
+                "year_of_production": "2005",
+                "body_type": null,
+                "body_type_text": "VAN",
+                "category": null,
+                "category_text": null,
+                "weight": "1930",
+                "weight_max": null,
+                "gearbox": null,
+                "gearbox_text": null,
+                "gearbox_gears": null,
+                "rims": null,
+                "tires": null
+            },
+            "license_plates_used": [
+                "PK859DS",
+                "SC570BH",
+                "AA001AA",
+                "AA777AA",
+                "PK021FR",
+                "BL335JP",
+                "PK474FP",
+                "MOSKVIC"
+            ],
             "vehicles_with_license_plate": [
                 {
-                    "vin": "449364",
-                    "manufacturer": "BABETTA",
-                    "model": "BABETTA 210",
-                    "vehicle_type": "10",
-                    "vehicle_type_text": "moped"
+                    "vin": "JF1SG5LW47G123964",
+                    "manufacturer": "SUBARU",
+                    "model": "FORESTER",
+                    "vehicle_type": "1",
+                    "vehicle_type_text": "osobn\u00e9 vozidlo"
+                },
+                {
+                    "vin": "VF3GC9HWC96169767",
+                    "manufacturer": "PEUGEOT",
+                    "model": "PARTNER",
+                    "vehicle_type": "1",
+                    "vehicle_type_text": "osobn\u00e9 vozidlo"
                 }
             ],
-            "overenie_db_vehicle_time_added": "1595752684",
-            "overenie_db_vehicle_time_updated": "1595752684",
-            "overenie_db_license_plate_time_added": "1669815687",
-            "overenie_db_license_plate_time_updated": "1669815687"
+            "overenie_db_vehicle_time_added": "1608284708",
+            "overenie_db_vehicle_time_updated": "1708277398",
+            "overenie_db_license_plate_time_added": "1674546407",
+            "overenie_db_license_plate_time_updated": "1680423277"
         }
     ],
     "success": true,
     "errors": [],
     "messages": [],
-    "time": 1718217932,
-    "response_time": 845.969970703125
+    "time": 1718524764,
+    "query": {
+        "keyword": "AA001AA",
+        "keyword2": "",
+        "type": "license_plate"
+    },
+    "response_time": 3.0400390625
 }
 ```
 
