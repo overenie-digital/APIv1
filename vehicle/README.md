@@ -379,4 +379,4 @@ curl -X GET \
 
 | Kľúč		     	| Povinný	| Dĺžka	| Typ		| Predvolené| Akceptovaná hodnota | Popis 									| 
 | ----------------	| ---------	| -----	| -----		| ---------	|---------------------|----------------------------------------	|
-| **license_plate_show**	| nie			| string	| none	| none, one, all	| Vo výsledku vráti hodnotu license_plate ako null, jedno EČV alebo všetky použité EČV. |
+| **license_plate_show**	| nie	|		| string	| none	| none, one, all	| Pri parametri *"type":"vin"* vo výsledku vráti hodnotu *license_plate* ako null, jedno EČV alebo všetky použité EČV. |
