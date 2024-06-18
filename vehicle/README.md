@@ -21,7 +21,7 @@ GET
 | ----------------	| ---------	| -----	| -----		| ---------	|---------------------|----------------------------------------	|	
 | **keyword**		| áno 		| 		| string	|			| 					  | Požiadavka na základe typu EČV/VIN
 | **keyword2**		| nie 		| 		| string	|			| 					  | Upresňujúca požiadavka, napr. pri parametri keyword s hodnotou EČV možno pomocou parametru keyword2 upresniť VIN, kedy vráti striktný výsledok konkrétnej kombinácie.
-| **type**			| áno 		| 		| string	|			| license_plate, vin  | Typ požiadavky, ktorou sa upresní aký typ dát je očakávaný v parametri keyword.
+| **type**			| áno 		| 		| string	|			| license_plate, vin, registration_code  | Typ požiadavky, ktorou sa upresní aký typ dát je očakávaný v parametri keyword.
 
 ## Výsledok
 
@@ -29,9 +29,11 @@ Hodnota výsledku je vo formáte podľa typu výsledku (string, int, json, ...),
 
 ## Príklady
 
-### Príklad 1
+### Príklad 1: Vyhľadanie podľa EČV
 
-Získanie vozidla na základe EČV. Výsledok vráti dva výskyty EČV v databáze.
+Vyhľadanie vozidla na základe EČV. Výsledok vráti vozidlá, na ktorých bola umiestnená vyhľadávaná EČV. 
+
+Výsledok môže obsahovať aj vozidlá, medzi ktorými neprebehol prenos EČV, nakoľko v minulosti mohli byť vydané rovnaké EČV pre automobil, motocykel či traktor.
 
 ```
 curl -X GET \
@@ -184,7 +186,7 @@ curl -X GET \
 }
 ```
 
-### Príklad 2
+### Príklad 2: Vyhľadanie podľa EČV a VIN
 
 Evidenčné číslo AA001AA bolo umiestnené na viacerých vozidlách, pre výber jedného výsledku konkrétneho vozidla, požiadavku upresníme parametrom keyword2 s VIN číslom vozidla.
 
@@ -279,9 +281,9 @@ curl -X GET \
 }
 ```
 
-### Príklad 3
+### Príklad 3: Vyhľadanie podľa VIN
 
-Výber vozidla podľa VIN čísla.
+Vyhľadanie vozidla podľa VIN čísla.
 
 Nakoľko však nedisponujeme informáciou, ktoré EČV v prípade prenosov bolo použité skôr, predvolene sa ako výsledok hodnoty *license_plate* zobrazuje *null*. 
 
@@ -371,6 +373,85 @@ curl -X GET \
         "type": "vin"
     },
     "response_time": 4.75
+}
+```
+
+### Príklad 4: Vyhľadanie podľa OEV
+
+Vyhľadanie vozidla podľa čísla Osvedčenia o evidencii vozidla (malý alebo veľký technický preukaz).
+
+```
+curl -X GET \
+     -H "Accept: application/json" \
+     -H "Version: 1.0" \
+     -H "Authorization: Bearer VAS_API_KLUC" \
+     -d '{"keyword":"PG294646", "type":"registration_code"}' \
+     "https://overenie.digital/api/vehicle"
+```
+#### Výsledok
+
+``` json
+{
+    "result": [
+        {
+            "vehicle": {
+                "license_plate": "BL498HJ",
+                "vin": "WVWZZZ1JZXW348758",
+                "brand": "VOLKSWAGEN",
+                "model": "BORA",
+                "first_evidence": "927151200",
+                "first_evidence_local": "1399327200",
+                "engine_volume_ccm": "1896",
+                "power_kw": "66.0",
+                "color": "zelen\u00e1 metal\u00edza tmav\u00e1",
+                "fuel": "2",
+                "fuel_text": "nafta",
+                "number_of_doors": null,
+                "number_of_seats": "5",
+                "year_of_production": "1999",
+                "body_type": null,
+                "body_type_text": null,
+                "category": null,
+                "category_text": "M1 - osobn\u00e9 vozidlo, max. 8 miest na sedenie okrem miesta pre vodi\u010da",
+                "weight": "1820",
+                "weight_max": null,
+                "gearbox": null,
+                "gearbox_text": null,
+                "gearbox_gears": null,
+                "rims": null,
+                "tires": null
+            },
+            "license_plates_used": [
+                "BL498HJ",
+                "NR738HJ"
+            ],
+            "vehicles_with_license_plate": [
+                {
+                    "vin": "WVWZZZ1JZXW348758",
+                    "brand": "VOLKSWAGEN",
+                    "model": "BORA",
+                    "body_type": null,
+                    "body_type_text": null,
+                    "category": null,
+                    "category_text": "M1 - osobn\u00e9 vozidlo, max. 8 miest na sedenie okrem miesta pre vodi\u010da"
+                }
+            ],
+            "overenie_db_vehicle_time_added": "1670168208",
+            "overenie_db_vehicle_time_updated": "1676039499",
+            "overenie_db_license_plate_time_added": "1670168208",
+            "overenie_db_license_plate_time_updated": "1718693294"
+        }
+    ],
+    "success": true,
+    "errors": [],
+    "messages": [],
+    "time": 1718693319,
+    "query": {
+        "keyword": "PG294646",
+        "keyword2": "",
+        "type": "registration_code"
+    },
+    "response_time": 2072.739990234375
 }
 ```
 
